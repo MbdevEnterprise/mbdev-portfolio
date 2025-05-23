@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     scroll-behavior: smooth;
     scrollbar-width: thin;
@@ -207,3 +208,115 @@ section {
     transition: all 0.3s ease;
     font-weight: bold;
 }
+=======
+svg {
+    width: 25px;
+    color: gray;
+    transition: all 0.3s ease;
+}
+
+svg:hover {
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+body {
+    background-color: #0e0e0e;
+    color: aliceblue;
+    font-family: system-ui;
+    padding: 50px 75px;
+}
+
+.spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--x, 10%) var(--y, 10%),
+            rgba(255, 255, 255, 5%) 0.05%,
+            rgba(0, 0, 0) 400px);
+    mix-blend-mode: screen;
+    z-index: 9999;
+}
+
+.container {
+    display: flex;
+}
+
+.container-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+.container-right {
+    width: 50%;
+    margin-top: 40px;
+    font-size: 18px;
+    color: #ffffff99;
+}
+
+.highlight {
+    color: white;
+}
+
+.name {
+    font-size: 52px;
+}
+
+.title {
+    font-weight: normal;
+    margin-top: -35px;
+    font-size: 24px;
+}
+
+.description {
+    font-weight: lighter;
+    font-size: 16px;
+    width: 60%;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.index-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: gray;
+    gap: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.index-item:hover,
+.index-item:active {
+    width: 200%;
+    color: aliceblue;
+}
+
+.line-a {
+    width: 5%;
+    height: 1px;
+    background-color: gray;
+    display: flex;
+}
+
+.bottom {
+    gap: 10px;
+    display: flex;
+}
+>>>>>>> 243c1b98400f0b209190b695978bec40d44a644b
