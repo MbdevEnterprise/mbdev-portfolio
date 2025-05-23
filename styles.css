@@ -1,3 +1,16 @@
+* {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #141414 #0e0e0e;
+}
+
+body {
+    background-color: #0e0e0e;
+    color: aliceblue;
+    font-family: system-ui;
+    padding: 50px 75px;
+}
+
 svg {
     width: 25px;
     color: gray;
@@ -11,13 +24,6 @@ svg:hover {
 a {
     text-decoration: none;
     color: aliceblue;
-}
-
-body {
-    background-color: #0e0e0e;
-    color: aliceblue;
-    font-family: system-ui;
-    padding: 50px 75px;
 }
 
 .spotlight {
@@ -39,7 +45,8 @@ body {
 }
 
 .container-left {
-    width: 50%;
+    position: fixed;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,10 +54,21 @@ body {
 }
 
 .container-right {
+    margin-left: 50%;
     width: 50%;
-    margin-top: 40px;
+    padding-top: 60px;
     font-size: 18px;
     color: #ffffff99;
+}
+
+section {
+    height: 100vh;
+    scroll-margin-top: 140px;
+}
+
+.experience {
+    scroll-margin-top: 50px;
+    margin-bottom: 150px;
 }
 
 .highlight {
@@ -104,7 +122,88 @@ body {
     display: flex;
 }
 
+.download-cv {
+    background-color: #cfd6dca3;
+    color: #141414;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 25px;
+    width: 125px;
+    transition: all 0.3s ease;
+}
+
+.download-cv:hover {
+    background-color: aliceblue;
+    color: #0e0e0e;
+    box-shadow: 0px 0px 5px aliceblue;
+    scale: 1.01;
+}
+
 .bottom {
     gap: 10px;
     display: flex;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin: 10px 0px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    background-color: #141414;
+    box-shadow: 3px 3px 10px #00000047;
+}
+
+.left {
+    width: 70%;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.right {
+    padding: 0 10px;
+    width: 240%;
+}
+
+.right p {
+    margin: 15px 0px -15px 0px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.right .description {
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+    color: gray;
+    font-weight: lighter;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.skills a {
+    background-color: rgba(240, 248, 255, 0.85);
+    padding: 5px 10px;
+    border-radius: 25px;
+    color: #0e0e0e;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
