@@ -69,6 +69,7 @@ section {
 .experience {
     scroll-margin-top: 50px;
     margin-bottom: 150px;
+    height: auto;
 }
 
 .highlight {
@@ -174,6 +175,7 @@ section {
 .right {
     padding: 0 10px;
     width: 240%;
+    padding-right: 25px;
 }
 
 .right p {
