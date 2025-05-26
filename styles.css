@@ -64,7 +64,23 @@ a {
 section {
     height: 100vh;
     scroll-margin-top: 140px;
+    opacity: 0;
+    transform: translateY(00px);
+    transition: all 0.5s ease-out;
 }
+
+/* Al entrar en viewport */
+section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* (Opcional) Al salir de viewport, revertimos */
+section.out-view {
+  opacity: 0;
+  transform: translateY(0px);
+}
+
 
 .experience {
     scroll-margin-top: 50px;
@@ -211,7 +227,7 @@ section {
 }
 
 .projects {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 50px;
     height: auto;
 }
 
@@ -267,4 +283,145 @@ section {
 
 .projects svg {
     width: 18px;
+}
+
+/* Smooth theme transition */
+html, body, .container-left, .container-right,  .card, .card-project {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Toggle button */
+.theme-toggle {
+    position: fixed;
+    bottom: 90px;
+    left: -65px;
+    transform: rotate(270deg);
+    z-index: 10000;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    justify-content: space-around;
+    width: 200px;
+    font-family: arial;
+    filter: opacity(0.3);
+}
+
+.theme-toggle:hover {
+  color: aliceblue;
+}
+
+.line-a-theme {
+    width: 50px;
+    height: 1px;
+    background-color: white;
+    display: flex;
+}
+
+body.light-mode .theme-toggle {
+    color: #111;
+}
+
+body.light-mode .line-a-theme {
+    background-color: #111;
+}
+
+body.light-mode .project-image{
+    filter: invert(0);
+}
+
+
+body.light-mode {
+    background-color: #f9f9f9;
+    color: #111;
+}
+
+body.light-mode a {
+    color: #111;
+}
+
+body.light-mode .spotlight {
+    background: radial-gradient(circle at var(--x, 10%) var(--y, 10%),
+        rgba(0, 0, 0, 0.05) 0.05%,
+        rgba(255, 255, 255) 400px);
+    mix-blend-mode: multiply;
+}
+
+body.light-mode .index-item {
+    color: #999;
+}
+
+body.light-mode .index-item:hover{
+    color: #111;
+}
+
+
+body.light-mode .index-item.active {
+    color: #111;
+}
+
+body.light-mode .line-a {
+    background-color: #999;
+}
+
+body.light-mode .download-cv {
+    background-color: #111;
+    color: #fff;
+}
+
+body.light-mode .download-cv:hover {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0px 0px 5px #111;
+}
+
+body.light-mode .card,
+body.light-mode .card-project {
+    border: solid 1px #eee;
+}
+
+
+body.light-mode .card:hover,
+body.light-mode .card-project:hover {
+    background-color: #eee;
+    box-shadow: 3px 3px 10px #ccc;
+}
+
+body.light-mode p {
+    color: #444;
+}
+
+body.light-mode .highlight {
+    color: #000;
+}
+
+body.light-mode .right .description,
+body.light-mode .project-description {
+    color: #444;
+}
+
+body.light-mode .skills a {
+    background-color: rgba(20, 20, 20, 0.1);
+    color: #000;
+}
+
+body.light-mode .project-img {
+    background-color: #000;
+}
+
+body.light-mode .project-title {
+    color: #000;
+}
+
+body.light-mode .projects svg,
+body.light-mode svg {
+    color: #888;
+}
+
+body.light-mode svg:hover {
+    color: #000;
 }

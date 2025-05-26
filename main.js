@@ -40,3 +40,59 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+  
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('theme-toggle');
+    const icon  = document.getElementById('theme-icon');
+    const body  = document.body;
+
+    // Inicializa estado
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') {
+      body.classList.add('light-mode');
+      icon.textContent = 'lightmode';
+    } else {
+      icon.textContent = 'darkmode';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = body.classList.toggle('light-mode');
+
+      // Actualiza icono
+      icon.textContent = isLight ? 'lightmode' : 'darkmode';
+
+      // Guarda preferencia
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  });
+
+
+
+  
+   document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            entry.target.classList.remove('out-view');
+          } else {
+            entry.target.classList.remove('in-view');
+            entry.target.classList.add('out-view');
+          }
+        });
+      },
+      {
+        threshold: 0.5 // se activa cuando al menos 10% del elemento es visible
+      }
+    );
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
